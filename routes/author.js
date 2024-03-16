@@ -7,6 +7,8 @@ import {isAdmin }from '../middleware/authenticate.js'
 const authorRouter = express.Router()
 
 // create CRUD endpoints
+// get request is accessible to all auhtorized users
+// all other request methods is exclusive to only admin users
 
 // route to get all authors
 authorRouter.get('/authors', (req, res) => {
@@ -86,7 +88,7 @@ authorRouter.put('/authors/:id', isAdmin, async (req, res) => {
   }
 })
 
-// .patch() is unlikely too be needed
+// .patch() is unlikely to be needed
 
 // route to delete an author
 authorRouter.delete('/authors/:id', isAdmin, async (req, res) => {

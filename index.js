@@ -20,7 +20,7 @@ app.use(logger, authorRouter)
 app.set('port', process.env.PORT || 3000)
 
 // redirect all request to  '/' to /author
-app.get('*', authenticate, (req, res) => {
+app.get('/', authenticate, (req, res) => {
   res.redirect('/authors')
   console.log('Redirecting to /authors')
 })
