@@ -1,0 +1,18 @@
+{
+  "admin": [
+    {
+      "username": "talut",
+      "password": "zellij0392"
+    }
+  ],
+  "regularUser": [
+    {
+      "username": "tomi",
+      "password": "wahala201"
+    },
+    {
+      "username": "ali",
+      "password": "simbixyz@1"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 // import neccessary modules
 import { readDB, writeDB, findAuthor, findAuthorIndex } from '../helper/findAuthorFunc.js'
 import express from 'express'
+import {isAdmin }from '../middleware/authenticate.js'
 
 // create a router instance
 const authorRouter = express.Router()
@@ -34,7 +35,7 @@ authorRouter.get('/authors/:id', async (req, res) => {
 })
 
 // route to add a new author
-authorRouter.post('/authors', (req, res) => {
+authorRouter.post('/authors', isAdmin, (req, res) => {
   // use then and catch to handle promise
   readDB().then((data) => {
     console.log(typeof data)
@@ -59,7 +60,7 @@ authorRouter.post('/authors', (req, res) => {
 })
 
 // route to update an author book titles
-authorRouter.put('/authors/:id', async (req, res) => {
+authorRouter.put('/authors/:id', isAdmin, async (req, res) => {
   // add new book(s) to existing author
   /* example/format of newBook passed to body as JSON: {
     "newBooksArray": [
@@ -88,7 +89,7 @@ authorRouter.put('/authors/:id', async (req, res) => {
 // .patch() is unlikely too be needed
 
 // route to delete an author
-authorRouter.delete('/authors/:id', async (req, res) => {
+authorRouter.delete('/authors/:id', isAdmin, async (req, res) => {
   try {
     const authorDB = JSON.parse(await readDB())
     const authorId = req.params.id

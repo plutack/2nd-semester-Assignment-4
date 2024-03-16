@@ -6,9 +6,9 @@
 
 // import required modules
 import express from 'express'
-import logger from './helper/logger.js'
+import logger from './middleware/logger.js'
 import authorRouter from './routes/author.js'
-
+import { authenticate } from './middleware/authenticate.js'
 // initialize instnce of express
 const app = express()
 
@@ -20,8 +20,7 @@ app.use(logger, authorRouter)
 app.set('port', process.env.PORT || 3000)
 
 // redirect all request to  '/' to /author
-app.get('/', (req, res) => {
-  res.status(301)
+app.get('*', authenticate, (req, res) => {
   res.redirect('/authors')
   console.log('Redirecting to /authors')
 })
