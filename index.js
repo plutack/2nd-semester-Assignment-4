@@ -15,6 +15,7 @@ const app = express();
 // get express to use middlewares
 app.use(express.json(), logger);
 app.use(authenticate, isAdmin, authorRouter); // always check for authentication and authorization validity
+app.use(authorRouter); // use custom router
 
 // bind important variables to express instance
 app.set("port", process.env.PORT || 3000);
