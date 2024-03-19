@@ -5,26 +5,27 @@
 // - Add a global simple logger to the app. (like i showed you in class)
 
 // import required modules
-import express from 'express'
-import logger from './middleware/logger.js'
-import authorRouter from './routes/author.js'
-import { authenticate } from './middleware/authenticate.js'
+import express from "express";
+import logger from "./middleware/logger.js";
+import authorRouter from "./routes/author.js";
+import { authenticate, isAdmin } from "./middleware/authenticate.js";
 // initialize instnce of express
-const app = express()
+const app = express();
 
 // get express to use middlewares
-app.use(express.json())
-app.use(logger, authorRouter)
+app.use(express.json(), logger);
+app.use(authenticate, isAdmin, authorRouter);
 
 // bind important variables to express instance
-app.set('port', process.env.PORT || 3000)
+app.set("port", process.env.PORT || 3000);
 
 // redirect all request to  '/' to /author
-app.get('/', authenticate, (req, res) => {
-  res.redirect('/authors')
-  console.log('Redirecting to /authors')
-})
+app.get("/", (req, res) => {
+  res.redirect("/authors");
+  console.log("Redirecting to /authors");
+});
 
 // initialize request listening event
-app.listen(app.get('port'), () =>
-  console.log(`App started on http://localhost:${app.get('port')}`))
+app.listen(app.get("port"), () =>
+  console.log(`App started on http://localhost:${app.get("port")}`),
+);
