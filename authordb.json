@@ -1,1 +1,50 @@
-[{"authorID":"jkr","authorName":"JK Rowling","books":["Harry Potter","Fantastic Beasts","The Casual Vacancy"]},{"authorID":"jrt","authorName":"JRR Tolkien","books":["The Hobbit","The Lord of the Rings"]},{"authorID":"grm","authorName":"George RR Martin","books":["A Song of Ice and Fire"]},{"authorID":"skg","authorName":"Stephen King","books":["The Shining","It","The Stand"]},{"authorID":"rhb","authorName":"Robbin Hobb","books":["The Farseer Trilogy"]},{"authorID":"bsn","authorName":"Brandon Sanderson","books":["The Stormlight Archive","Mistborn"]}]
+[
+  {
+    "authorID": "jkr",
+    "authorName": "JK Rowling",
+    "books": [
+      "Harry Potter",
+      "Fantastic Beasts",
+      "The Casual Vacancy"
+    ]
+  },
+  {
+    "authorID": "jrt",
+    "authorName": "JRR Tolkien",
+    "books": [
+      "The Hobbit",
+      "The Lord of the Rings"
+    ]
+  },
+  {
+    "authorID": "grm",
+    "authorName": "George RR Martin",
+    "books": [
+      "A Song of Ice and Fire"
+    ]
+  },
+  {
+    "authorID": "skg",
+    "authorName": "Stephen King",
+    "books": [
+      "The Shining",
+      "It",
+      "The Stand"
+    ]
+  },
+  {
+    "authorID": "rhb",
+    "authorName": "Robbin Hobb",
+    "books": [
+      "The Farseer Trilogy"
+    ]
+  },
+  {
+    "authorID": "bsn",
+    "authorName": "Brandon Sanderson",
+    "books": [
+      "The Stormlight Archive",
+      "Mistborn"
+    ]
+  }
+]
