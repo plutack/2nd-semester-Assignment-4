@@ -1,3 +1,3 @@
-- [*] create authentication middleware 
-- [*] create authorized json pseudo database containing admin and normal user
-- [*] admin user to have access to all routes, normal user to have access to just get routes
+- [x] create authentication middleware 
+- [x] create authorized json pseudo database containing admin and normal user
+- [x] admin user to have access to all routes, normal user to have access to just get routes
