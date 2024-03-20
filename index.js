@@ -9,12 +9,13 @@ import express from "express";
 import logger from "./middleware/logger.js";
 import authorRouter from "./routes/author.js";
 import { authenticate, isAdmin } from "./middleware/authenticate.js";
+
 // initialize instnce of express
 const app = express();
 
 // get express to use middlewares
 app.use(express.json(), logger);
-app.use(authenticate, isAdmin, authorRouter); // always check for authentication and authorization validity
+app.use(authenticate, isAdmin); // always check for authentication and authorization validity
 app.use(authorRouter); // use custom router
 
 // bind important variables to express instance

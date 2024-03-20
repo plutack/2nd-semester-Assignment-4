@@ -53,14 +53,16 @@ authorRouter.post("/authors", (req, res) => {
       console.log(typeof data);
       const authors = JSON.parse(data);
       const newAuthor = req.body;
-      /* example/format of newAuthor passed to body as JSON: {
-    "authorID": "rrn",
-    "authorName": "Rick Riordan",
-    "books": [
-        "Percy Jackson Book Series",
-        "The Kane Chronicles"
-    ]
-} */
+      /* example/format of newAuthor passed to body as JSON: 
+    {
+      "authorID": "rrn",
+      "authorName": "Rick Riordan",
+      "books": [
+          "Percy Jackson Book Series",
+          "The Kane Chronicles"
+      ]
+    } 
+    */
 
       authors.push(newAuthor);
       writeDB(authors);
@@ -75,12 +77,14 @@ authorRouter.post("/authors", (req, res) => {
 // route to update an author book titles
 authorRouter.put("/authors/:id", async (req, res) => {
   // add new book(s) to existing author
-  /* example/format of newBook passed to body as JSON: {
+  /* example/format of newBook passed to body as JSON: 
+  {
     "newBooksArray": [
         "Defiant",
         "Cytonic"
     ]
-} */
+  } 
+  */
   try {
     const authorDB = JSON.parse(await readDB());
     console.log(typeof authorDB);
